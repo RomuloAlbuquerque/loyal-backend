@@ -1,82 +1,25 @@
 import admin from "../entities/admin";
-import { bulbasaur, butterfree, card, charmander, clefairy, jigglypuff, squirtle, weedle } from "../objects/card";
+import { cidia, daiane, iranilde, Jucy, nhanguielly, owner, renata, romulo, silveira, socorro, val } from "../objects/card";
 import { infoCollection } from "../objects/infoCollection";
 import logo from "../objects/logo";
-import { pikachu } from "../objects/pikachu";
-import { user } from "../objects/user";
+import { info } from "../objects/info";
+import clientList from "../objects/clientList";
 
 const service = {
 
-  adminInfoHome: () => user,
+  adminInfoHome: () => info,
 
-  adminCardHome: () => card,
-
-  clientInfoCollection: ()=> infoCollection,
-
-  clientCardCollection: () => [pikachu, charmander, clefairy, squirtle, jigglypuff, bulbasaur, butterfree, weedle],
+  adminCardHome: () => owner,
 
   adminLogoHome: () => logo,
 
+  clientInfoCollection: ()=> infoCollection,
 
+  clientCardCollection: () => [socorro, val, silveira, daiane, renata, Jucy, nhanguielly, romulo, iranilde],
 
+  clientDetails: (id:any) => clientList.find(x=>Number(x.id)===Number(id))
+  
+  // }clientList.map( (x)=> Number(id) === Number(x.id) ? x : null) 
 
-
-
-
-  ///////////////////////////////////////////////////////OUTROS TESTES
-  listCard: () => card,
-
-  infoCollection: ()=> infoCollection,
-
-  listAdmin: () => [
-    {
-      name: "Renata",
-      idade: 35,
-      sexo: "feminino",
-      saldo: 10000,
-      email: 'renata@email.com',
-      password: '12345'
-    },
-    {
-      name: "Romulo",
-      idade: 33,
-      sexo: "masculino",
-      saldo: 50000,
-      email: 'romulo.albuquerque@live.com',
-      password: '12345'
-    },
-  ],
-
-  listClient: () => {
-    const foundDatabase = {
-      name: "Renata",
-      idade: 35,
-      sexo: "feminino",
-      saldo: 10000,
-    };
-
-    const object = admin(
-      foundDatabase.name,
-      foundDatabase.idade,
-      foundDatabase.sexo,
-      foundDatabase.saldo
-    );
-    return object;
-  },
-
-  cep: (cep: object) => {
-    const y = Object.values(cep)[0];
-    y === "67030168" ? console.log("certo") : console.log("errado");
-    return {
-      logradouro: "Campestre",
-      complemento: "string",
-      bairro: "string",
-      localidade: "string",
-      uf: "string",
-      ibge: "string",
-      ddd: "string",
-    };
-  },
-};
-
+}
 export default service;

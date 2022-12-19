@@ -21,9 +21,7 @@ const server = () => {
 
   app.use(express.json({ limit: "1mb" }));
 
-  app.use(router.instance());
-
-
+  app.use(router())
 };
 
 export default server();

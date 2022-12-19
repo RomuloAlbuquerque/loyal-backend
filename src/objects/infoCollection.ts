@@ -1,6 +1,10 @@
-import { User } from "../types/user";
+import { Info } from "../types/info";
 
-export const infoCollection:User = {
-    info: 'Meus Pokemons',
-    subInfo: 'Cadastrados'
+export const infoCollection:Info = {
+    info: 'Coleção',
+    subInfo: 'Clientes Cadastrados'
 } 
+// export const infoCollection:User = {
+//     info: 'Meus Pokemons',
+//     subInfo: 'Cadastrados'
+// } 

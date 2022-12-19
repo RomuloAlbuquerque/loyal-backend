@@ -1,4 +1,3 @@
-import login from "../service/login";
 import service from "../service/service";
 
 const controller = {
@@ -11,28 +10,9 @@ const controller = {
   clientCardCollection: (req:any, res:any) => res.json(service.clientCardCollection()),
 
   adminLogoHome: (req:any, res:any) => res.json(service.adminLogoHome()),
+
+  clientDetails: (req:any, res:any) =>  res.json(service.clientDetails(req.params.id))
  
-
-
-
-
-
-
-
-  ////////////////////////////////OUTROS TESTES
-  // userController: (req: any, res: any) => res.json(service.listUser()),
-
-  cardController: (req: any, res: any) => res.json(service.listCard()),
-
-  infoCollectionController: (req: any, res: any) => res.json(service.infoCollection()),
-
-  // adminController: (req: any, res: any) => res.send(service.listAdmin()),
-
-  clientController: (req: any, res: any) => res.send(service.listClient()),
-
-  loginController: (req: any, res: any) => res.json(login.fazerLogin(req.body)),
-
-  cep: (req: any, res: any) => res.send(service.cep(req.body))
 }
 
 export default controller;
